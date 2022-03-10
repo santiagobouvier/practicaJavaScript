@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">  
+    <title>La Fabrica</title>
+    <link rel="icon"  href="Recetas/logo.jpg">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/clases.js"></script>
+    <script type="text/javascript" src="js/codigo.js"></script>
+
+</head>
+<body>
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+          <img  class="clearfix" id="logo" src="recetas/logo.jpg" alt="logo">
+          <p>Bienvenido/a <span id="bienvenida"></span></p>
+          <ul class="navPrincipal" id="menuAdmin">  <!-- INICIO MENU -->
+                <li class="botonMnu" id="mnuRegistrarUsuario">
+                    <a>Registrar Usuario</a>
+                </li>
+                <li class="botonMnu" id="mnuListarUsuarios">
+                  <a>Lista Usuarios</a>
+              </li>
+                <li class="botonMnu" id="mnuRegistrarReceta">
+                  <a>Registrar Receta</a>
+                </li>
+                <li class="botonMnu" id="mnuCatalogoRecetas">
+                  <a>Catalogo Recetas</a>
+                </li>
+                <li class="botonMnu" id="mnuCerrarSesion">
+                  <a>Cerrar sesion</a>
+                </li>
+                <li class="botonMnu" id="mnuIniciarSesion">
+                  <a>Iniciar Sesion</a>
+                </li>
+                <li class="botonMnu" id="mnuReportes">
+                  <a>Reportes</a>
+                </li>
+                <li class="botonMnu" id="mnuEstadoUsuarios">
+                  <a>Estado Usuarios</a>
+                </li>
+          </ul>  <!-- FIN MENU -->         
+
+        </div><!-- FIN CABEZAL -->
+
+        <div id="Buscador">
+          <input type="text" id="txtRecetaBuscador" placeholder="Buscar..." class="campoTextoBuscador">
+          <input type="button" id="btnBuscador" value="BUSCAR" class="boton">
+          <p id="parrafoBuscador"></p>
+         </div>
+         
+        <div id="contenido">
+
+              <div id="login">
+                <h1>Iniciar Sesion</h1>
+                <input type="text" id="txtUsuarioLogin" placeholder = "Ingrese Usuario"><br>
+                <input type="password" id="txtClaveLogin" placeHolder="Ingrese clave"><br><br>
+                <input type="button" value="Ingresar" id="btnLogin" class="boton">
+                <p id="mensajesLogin"></p> 
+              </div> 
+
+              <div id="registroUsuario">
+                <h1>Registro de usuario</h1>
+                <div class="tabla">
+                    <div class="fila">
+                      <div class="celda"><label for="txtNombreUsuario">Nombre:</label></div>
+                      <div class="celda"> <input type="text" id="txtNombreUsuario"></div>
+                    </div>
+                    <div class="fila">
+                        <div class="celda"><label for="txtApellido">Apellido:</label></div>
+                        <div class="celda"> <input type="text" id="txtApellido"></div>
+                    </div>
+                    <div class="fila">
+                        <div class="celda"><label for="txtClave">Clave:</label></div>
+                        <div class="celda"> <input type="password" id="txtClave"></div>
+                    </div>
+                    <div class="fila">
+                        <div class="celda"></div>
+                        <div class="celda">  <input type="button" value="Registrar" id="btnRegistrarUsuario"></div>
+                    </div>
+                </div>
+                <p id="mensajesRegistrarUsuario"></p>
+              </div>  
+              
+              <div id="registroReceta">
+                <h1>Registro de Recetas</h1>
+                <div class="tabla">
+                    <div class="fila">
+                      <div class="celda"><label for="txtTitulo">Titulo:</label></div>
+                      <div class="celda"> <input type="text" id="txtTitulo"></div>
+                    </div>
+                    <div class="fila">
+                      <div class="celda"><label for="txtFoto">Foto:</label></div>
+                      <div class="celda"><input type="file" id="txtFoto"></div>
+                    </div>
+                    <div class="fila">
+                      <div class="celda"><label for="txtDuracion">Tiempo de Preparacion:</label></div>
+                      <div class="celda"> <input type="number" id="txtDuracion" value=0></div>
+                    </div>
+                    <div class="fila">
+                        <div class="celda"><label for="txtDescripcion">Descripcion:</label></div>
+                        <div class="celda"> <textarea rows="4" cols="50" id="txtDescripcion"></textarea></div>
+                    </div>
+                    
+                   
+                    <div class="fila">
+                        <div class="celda"></div>
+                        <div class="celda">  <input type="button" value="Registrar" id="btnRegistrarReceta"  class="boton"></div>
+                    </div>
+                </div>
+                <p id="mensajesRegistrarReceta"></p>
+              </div>    
+
+
+              <div id="catalogoRecetas" class="catalogoRecetas" >
+               
+           
+              </div>
+
+
+              <div id="listadoUsuarios" >
+
+                  <table id="listaUsuarios" class="cinereousTable">
+                                
+                  </table>
+    
+             </div>
+
+             <div id="reportes"  class="reportes">
+               
+              <input type="button" id="btnBuscadorTiempo" value="Tiempo Preparacion" class="boton">
+              <br><br>
+              <input type="button" id="btnBuscadorDuracion" value="Mayor Duracion" class="boton">
+              <br><br>
+              <input type="button" id="btnBuscadorRendimiento" value="Recetas Segun Likes" class="boton">
+            
+             </div>
+
+             <div id="buscadorSegunTiempo">
+                <label>Tiempo de Preparacion (minutos)</label>
+                <br>
+                <input type="text" id="txtBuscarTiempo" placeholder="Buscar..." class="campoTextoBuscador">
+                <br>
+                <input type="button" id="btnBuscadorPorTiempo" value="BUSCAR" class="boton">
+                <p id="parrafoBuscadorSegunTiempo"></p>
+             </div>
+
+             <div id="catalogoRecetasPorTiempo" class="catalogoRecetas" > </div>
+             
+         
+             
+
+         
+        </div><!-- FIN CONTENIDO -->
+        <div id="pie">
+          
+        </div><!-- FIN PIE -->
+      </div><!-- FIN CONTENEDOR -->
+</body>
+</html>
